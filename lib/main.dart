@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:praktek2/josh/Provider/Theme.dart';
-import 'package:praktek2/josh/Provider/infomation%20provider/profauna.dart';
-import 'package:praktek2/josh/Provider/infomation%20provider/proflora.dart';
-import 'package:praktek2/josh/Provider/infomation%20provider/prolake.dart';
-import 'package:praktek2/josh/Provider/infomation%20provider/promountain.dart';
-import 'package:praktek2/josh/Provider/infomation%20provider/proriver.dart';
-import 'package:praktek2/josh/Provider/navigation.dart';
-import 'package:praktek2/josh/Provider/Bookmarkpro.dart';
-import 'package:praktek2/josh/Provider/navpro.dart';
 import 'package:provider/provider.dart';
+import 'josh/Provider/Bookmarkpro.dart';
+import 'josh/Provider/Theme.dart';
+import 'josh/Provider/infomation provider/profauna.dart';
+import 'josh/Provider/infomation provider/proflora.dart';
+import 'josh/Provider/infomation provider/prolake.dart';
+import 'josh/Provider/infomation provider/promountain.dart';
+import 'josh/Provider/infomation provider/proriver.dart';
+import 'josh/Provider/navigation.dart';
+import 'josh/Provider/navpro.dart';
 
 void main() {
   runApp(

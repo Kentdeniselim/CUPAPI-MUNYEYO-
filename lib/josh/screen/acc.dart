@@ -11,17 +11,6 @@ class Account extends StatelessWidget {
     final themeProvider = Provider.of<ThemePro>(context); // Akses ThemePro
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Account & Settings',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
-          ),
-        ),
-        backgroundColor: Colors.green,
-        centerTitle: true,
-      ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
