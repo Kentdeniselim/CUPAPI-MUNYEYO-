@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:praktek2/josh/Provider/Bookmarkpro.dart';
-import 'package:praktek2/josh/Provider/navigation.dart';
+import 'package:praktek2/josh/screen/navigation.dart';
 import 'package:provider/provider.dart';
 
 class Towuti extends StatefulWidget {
