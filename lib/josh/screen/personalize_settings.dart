@@ -13,10 +13,7 @@ class PersonalizeSettings extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           'Personalize Settings',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
-          ),
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
         ),
         backgroundColor: Colors.green,
         centerTitle: true,
@@ -28,10 +25,7 @@ class PersonalizeSettings extends StatelessWidget {
           children: [
             Text(
               'App Theme',
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-              ),
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             Card(
               margin: EdgeInsets.symmetric(vertical: 10),
@@ -55,10 +49,7 @@ class PersonalizeSettings extends StatelessWidget {
             SizedBox(height: 20),
             Text(
               'Other Personalization Options (Future)',
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-              ),
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             Card(
               margin: EdgeInsets.symmetric(vertical: 10),

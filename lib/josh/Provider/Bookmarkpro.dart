@@ -19,4 +19,11 @@ class BookmarkProvider with ChangeNotifier {
   bool isBookmarked(String title) {
     return _bookmarks.any((item) => item['title'] == title);
   }
+
+  // --- START NEW CODE ---
+  void clearAllBookmarks() {
+    _bookmarks.clear();
+    notifyListeners();
+  }
+  // --- END NEW CODE ---
 }
