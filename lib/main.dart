@@ -10,6 +10,8 @@ import 'package:praktek2/josh/Provider/Bookmarkpro.dart';
 import 'package:praktek2/josh/Provider/navpro.dart';
 import 'package:provider/provider.dart';
 
+import 'josh/Provider/infomation provider/profauna.dart';
+
 void main() {
   runApp(
     MultiProvider(
