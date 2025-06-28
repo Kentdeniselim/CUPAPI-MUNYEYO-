@@ -75,7 +75,7 @@ class _danauposo extends State<Poso> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => MainNavigation()),
+                MaterialPageRoute(builder: (context) => MainNavigationpro()),
               );
             },
           ),

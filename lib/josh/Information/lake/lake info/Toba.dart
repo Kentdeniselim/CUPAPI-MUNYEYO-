@@ -75,7 +75,7 @@ class _danautoba extends State<Toba> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => MainNavigation()),
+                MaterialPageRoute(builder: (context) => MainNavigationpro()),
               );
             },
           ),

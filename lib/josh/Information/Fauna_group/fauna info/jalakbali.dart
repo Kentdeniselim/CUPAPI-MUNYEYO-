@@ -72,7 +72,7 @@ class _jalakbali extends State<JalakBali> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => MainNavigation()),
+                MaterialPageRoute(builder: (context) => MainNavigationpro()),
               );
             },
           ),

@@ -76,7 +76,7 @@ class _HarimausumateraState extends State<Harimausumatera> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => MainNavigation()),
+                MaterialPageRoute(builder: (context) => MainNavigationpro()),
               );
             },
           ),

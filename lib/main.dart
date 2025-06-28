@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:praktek2/josh/Provider/time_provider.dart';
+import 'package:praktek2/josh/screen/Home.dart';
 import 'package:provider/provider.dart';
 import 'josh/Provider/Bookmarkpro.dart';
 import 'josh/Provider/Theme.dart';
@@ -56,7 +57,7 @@ class MyApp extends StatelessWidget {
               foregroundColor: Colors.white,
             ),
           ),
-          home: MainNavigation(),
+          home: MainNavigationpro(),
         );
       },
     );

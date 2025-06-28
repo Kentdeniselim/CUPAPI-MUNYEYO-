@@ -75,7 +75,7 @@ class _sungaikapuas extends State<Kapuas> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => MainNavigation()),
+                MaterialPageRoute(builder: (context) => MainNavigationpro()),
               );
             },
           ),

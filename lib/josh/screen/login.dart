@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import 'Home.dart';
+import 'package:praktek2/josh/screen/navigation.dart';
 
 class Login extends StatelessWidget {
   @override
@@ -151,9 +150,10 @@ class _SignInPageState extends State<SignInPage> {
                   ),
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
-                      Navigator.push(
+                      Navigator.pushReplacement(
                         context,
-                        MaterialPageRoute(builder: (context) => Home()),
+                        MaterialPageRoute(
+                            builder: (context) => MainNavigationpro()),
                       );
                     }
                   },
@@ -246,9 +246,10 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
-                      Navigator.push(
+                      Navigator.pushReplacement(
                         context,
-                        MaterialPageRoute(builder: (context) => Home()),
+                        MaterialPageRoute(
+                            builder: (context) => MainNavigationpro()),
                       );
                     }
                   },
@@ -265,16 +266,6 @@ class _SignUpPageState extends State<SignUpPage> {
           ),
         ),
       ),
-    );
-  }
-}
-
-class NextPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("Next Page")),
-      body: Center(child: Text("Welcome to the Next Page!")),
     );
   }
 }

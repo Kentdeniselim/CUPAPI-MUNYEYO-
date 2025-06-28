@@ -2,14 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:praktek2/josh/Provider/Theme.dart';
 import 'package:praktek2/josh/Provider/time_provider.dart';
 import 'package:praktek2/josh/Provider/navpro.dart';
+import 'package:praktek2/josh/screen/About_Us.dart';
 import 'package:praktek2/josh/screen/Home.dart';
 import 'package:praktek2/josh/screen/bookmarkpage.dart';
 import 'package:praktek2/josh/screen/personalize_settings.dart';
+import 'package:praktek2/josh/screen/login.dart';
 import 'package:provider/provider.dart';
 import '../Provider/Bookmarkpro.dart';
 
-class MainNavigation extends StatelessWidget {
-  MainNavigation({Key? key}) : super(key: key);
+class MainNavigationpro extends StatelessWidget {
+  MainNavigationpro({Key? key}) : super(key: key);
 
   final List<Widget> _pages = [
     const Home(),
@@ -39,33 +41,34 @@ class MainNavigation extends StatelessWidget {
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(color: Colors.green),
+            DrawerHeader(
+              decoration: const BoxDecoration(color: Colors.green),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   CircleAvatar(
                     radius: 30,
-                    backgroundImage:
-                        NetworkImage('https://via.placeholder.com/150'),
+                    backgroundImage: NetworkImage(
+                      'https://images.unsplash.com/photo-1601758123927-1960c337cd29?auto=format&fit=crop&w=80&q=80',
+                    ),
                   ),
-                  SizedBox(height: 10),
-                  Text(
-                    'Nama Pengguna',
+                  const SizedBox(height: 10),
+                  const Text(
+                    'Cupapi Munyenyo',
                     style: TextStyle(color: Colors.white, fontSize: 18),
                   ),
-                  Text(
-                    'email@example.com',
+                  const Text(
+                    'CupapiMunyenyo@Mikroskil.com',
                     style: TextStyle(color: Colors.white70, fontSize: 14),
                   ),
                 ],
               ),
             ),
             ListTile(
-              leading: Icon(Icons.settings),
-              title: Text('Settings'),
+              leading: const Icon(Icons.settings),
+              title: const Text('Settings'),
               onTap: () {
-                Navigator.pop(context); // Tutup drawer
+                Navigator.pop(context);
                 Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -75,12 +78,26 @@ class MainNavigation extends StatelessWidget {
               },
             ),
             ListTile(
-              leading: Icon(Icons.logout, color: Colors.red),
-              title: Text('Logout', style: TextStyle(color: Colors.red)),
+              leading: const Icon(Icons.info_outline),
+              title: const Text('About Us'),
               onTap: () {
                 Navigator.pop(context);
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Logout Pressed')),
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const AboutUsPage(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.logout, color: Colors.red),
+              title: const Text('Logout', style: TextStyle(color: Colors.red)),
+              onTap: () {
+                Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (context) => Login()),
+                  (route) => false,
                 );
               },
             ),
@@ -118,7 +135,7 @@ class MainNavigation extends StatelessWidget {
           if (navigationProvider.currentindex == 1 &&
               bookmarkProvider.bookmarks.isNotEmpty)
             IconButton(
-              icon: const Icon(Icons.clear_all, color: Colors.red),
+              icon: const Icon(Icons.delete_sweep, color: Colors.red),
               tooltip: 'Clear All Bookmarks',
               onPressed: () {
                 showDialog(
