@@ -72,7 +72,7 @@ class MainNavigationpro extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const PersonalizeSettings(),
+                    builder: (context) => PersonalizeSettings(),
                   ),
                 );
               },

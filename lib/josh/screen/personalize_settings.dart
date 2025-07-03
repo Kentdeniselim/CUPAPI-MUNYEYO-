@@ -1,6 +1,8 @@
+// lib/josh/screen/personalize_settings.dart
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:praktek2/josh/Provider/Theme.dart';
+import 'package:praktek2/josh/screen/edit_profile_page.dart'; // Import halaman baru
 
 class PersonalizeSettings extends StatelessWidget {
   const PersonalizeSettings({super.key});
@@ -19,6 +21,31 @@ class PersonalizeSettings extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                Text(
+                  'Account Settings', // Tambahkan kategori baru
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Theme.of(context).textTheme.bodyLarge?.color,
+                  ),
+                ),
+                Card(
+                  margin: const EdgeInsets.symmetric(vertical: 10),
+                  child: ListTile(
+                    leading: const Icon(Icons.person),
+                    title: const Text('Edit Profile'),
+                    trailing: const Icon(Icons.arrow_forward_ios),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                const EditProfilePage()), // Navigasi ke halaman edit profil
+                      );
+                    },
+                  ),
+                ),
+                const SizedBox(height: 20),
                 Text(
                   'App Theme',
                   style: TextStyle(
