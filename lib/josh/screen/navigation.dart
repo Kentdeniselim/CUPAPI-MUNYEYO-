@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:praktek2/josh/Provider/Theme.dart';
 import 'package:praktek2/josh/Provider/time_provider.dart';
 import 'package:praktek2/josh/Provider/navpro.dart';
-import 'package:praktek2/josh/screen/About_Us.dart';
+import 'package:praktek2/josh/screen/Isi%20Drawer/About_Us.dart';
 import 'package:praktek2/josh/screen/Home.dart';
 import 'package:praktek2/josh/screen/bookmarkpage.dart';
-import 'package:praktek2/josh/screen/personalize_settings.dart';
-import 'package:praktek2/josh/screen/login.dart';
+import 'package:praktek2/josh/screen/Isi%20Drawer/personalize_settings.dart';
+import 'package:praktek2/josh/screen/login%20screen/login_screen.dart';
 import 'package:provider/provider.dart';
 import '../Provider/Bookmarkpro.dart';
 
@@ -96,7 +96,7 @@ class MainNavigationpro extends StatelessWidget {
               onTap: () {
                 Navigator.pushAndRemoveUntil(
                   context,
-                  MaterialPageRoute(builder: (context) => Login()),
+                  MaterialPageRoute(builder: (context) => LoginScreen()),
                   (route) => false,
                 );
               },

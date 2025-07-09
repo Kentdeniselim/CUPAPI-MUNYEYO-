@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:praktek2/josh/Provider/Theme.dart'; // Pastikan import ini ada
 import 'package:provider/provider.dart';
-import 'package:praktek2/josh/screen/personalize_settings.dart'; // Import halaman personalisasi baru
+import 'package:praktek2/josh/screen/Isi%20Drawer/personalize_settings.dart'; // Import halaman personalisasi baru
 
 class Account extends StatelessWidget {
   const Account({super.key});

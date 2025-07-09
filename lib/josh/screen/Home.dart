@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import '../Information/Fauna_group/Fauna.dart';
-import '../Information/flora_group/Flora.dart';
-import '../Information/lake/Lake.dart';
-import '../Information/mountain/mountain.dart';
-import '../Information/river/River.dart';
+import 'package:praktek2/josh/Information/Fauna_group/Fauna.dart';
+import 'package:praktek2/josh/Information/flora_group/Flora.dart';
+import 'package:praktek2/josh/Information/lake/Lake.dart';
+import 'package:praktek2/josh/Information/mountain/mountain.dart';
+import 'package:praktek2/josh/Information/river/River.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});

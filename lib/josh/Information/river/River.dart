@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:praktek2/josh/Information/river/add_river.dart';
-import 'package:praktek2/josh/screen/Home.dart';
+import 'package:praktek2/josh/screen/navigation.dart';
 import 'package:provider/provider.dart';
 import '../../Provider/infomation provider/proriver.dart';
 
@@ -31,7 +31,7 @@ class River extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Home()),
+                MaterialPageRoute(builder: (context) => MainNavigationpro()),
               );
             },
           ),

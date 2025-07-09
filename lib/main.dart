@@ -1,6 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:praktek2/josh/Provider/login%20provider/signin_provider.dart';
+import 'package:praktek2/josh/Provider/login%20provider/signup_provider.dart';
 import 'package:praktek2/josh/Provider/time_provider.dart';
-import 'package:praktek2/josh/screen/Home.dart';
+import 'package:praktek2/josh/screen/login%20screen/login_screen.dart';
 import 'package:provider/provider.dart';
 import 'josh/Provider/Bookmarkpro.dart';
 import 'josh/Provider/Theme.dart';
@@ -25,6 +28,8 @@ void main() {
         ChangeNotifierProvider(create: (_) => ThemePro()),
         ChangeNotifierProvider(create: (_) => Navpro()),
         ChangeNotifierProvider(create: (_) => TimeProvider()),
+        ChangeNotifierProvider(create: (_) => SigninProvider()),
+        ChangeNotifierProvider(create: (_) => SignUpProvider())
       ],
       child: const MyApp(),
     ),
@@ -57,7 +62,7 @@ class MyApp extends StatelessWidget {
               foregroundColor: Colors.white,
             ),
           ),
-          home: MainNavigationpro(),
+          home: LoginScreen(),
         );
       },
     );

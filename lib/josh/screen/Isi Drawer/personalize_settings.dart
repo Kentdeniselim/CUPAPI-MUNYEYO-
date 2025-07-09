@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:praktek2/josh/Provider/Theme.dart';
-import 'package:praktek2/josh/screen/edit_profile_page.dart'; // Import halaman baru
+import 'package:praktek2/josh/screen/Isi%20Drawer/edit_profile_page.dart'; // Import halaman baru
 
 class PersonalizeSettings extends StatelessWidget {
   const PersonalizeSettings({super.key});
