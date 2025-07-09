@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:praktek2/josh/Information/flora_group/add_flora.dart';
 import 'package:provider/provider.dart';
 import '../../Provider/infomation provider/proflora.dart';
 
@@ -21,6 +22,17 @@ class Florapage extends StatelessWidget {
         ),
         backgroundColor: Colors.green,
         centerTitle: true,
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => AddFloraPage()),
+          );
+        },
+        backgroundColor: Colors.green,
+        child: Icon(Icons.add, color: Colors.white),
+        tooltip: 'Tambah Artikel Flora',
       ),
       body: Column(
         children: [

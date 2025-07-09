@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:praktek2/josh/Information/mountain/add_mountain.dart';
 import 'package:provider/provider.dart';
 import '../../Provider/infomation provider/promountain.dart';
 
@@ -35,6 +36,17 @@ class _MountainState extends State<Mountain> {
         ),
         backgroundColor: Colors.green,
         centerTitle: true,
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => AddMountainPage()),
+          );
+        },
+        backgroundColor: Colors.green,
+        child: Icon(Icons.add, color: Colors.white),
+        tooltip: 'Tambah Artikel Gunung',
       ),
       body: Column(
         children: [

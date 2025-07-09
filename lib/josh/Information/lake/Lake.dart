@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:praktek2/josh/Information/lake/add_lake.dart';
 import 'package:provider/provider.dart';
 import '../../Provider/infomation provider/prolake.dart';
 
@@ -21,6 +22,17 @@ class Lake extends StatelessWidget {
         ),
         backgroundColor: Colors.green,
         centerTitle: true,
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => AddLakePage()),
+          );
+        },
+        backgroundColor: Colors.green,
+        child: Icon(Icons.add, color: Colors.white),
+        tooltip: 'Tambah Artikel Danau',
       ),
       body: Column(
         children: [

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:praktek2/josh/Information/river/add_river.dart';
 import 'package:praktek2/josh/screen/Home.dart';
 import 'package:provider/provider.dart';
 import '../../Provider/infomation provider/proriver.dart';
@@ -35,6 +36,17 @@ class River extends StatelessWidget {
             },
           ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => AddRiverPage()),
+          );
+        },
+        backgroundColor: Colors.green,
+        child: Icon(Icons.add, color: Colors.white),
+        tooltip: 'Tambah Artikel Sungai',
       ),
       body: Column(
         children: [

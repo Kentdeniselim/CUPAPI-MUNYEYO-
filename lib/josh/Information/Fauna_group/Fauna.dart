@@ -1,4 +1,7 @@
+// lib/josh/Information/Fauna_group/Fauna.dart
+
 import 'package:flutter/material.dart';
+import 'package:praktek2/josh/Information/Fauna_group/add_fauna.dart';
 import 'package:provider/provider.dart';
 import '../../Provider/infomation provider/profauna.dart';
 import '../../Provider/kategori.dart';
@@ -149,6 +152,16 @@ class Faunapage extends StatelessWidget {
             ),
           ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => AddFaunaPage()),
+          );
+        },
+        backgroundColor: Colors.green,
+        child: Icon(Icons.add),
       ),
     );
   }

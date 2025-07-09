@@ -17,9 +17,13 @@ final ThemeData lightTheme = ThemeData.light().copyWith(
     selectedItemColor: Colors.green,
     unselectedItemColor: Colors.grey,
   ),
-  cardTheme: CardTheme(
+  // --- Perbaikan di sini ---
+  cardTheme: CardThemeData(
+    // Ganti CardTheme menjadi CardThemeData
     elevation: 2,
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+    // Anda mungkin ingin menambahkan 'color' di lightTheme juga jika perlu
+    // color: Colors.white, // Contoh: warna card untuk light theme
   ),
   textTheme: ThemeData.light().textTheme.apply(
         bodyColor: Colors.black87,
@@ -44,7 +48,9 @@ final ThemeData darkTheme = ThemeData.dark().copyWith(
     selectedItemColor: Colors.tealAccent,
     unselectedItemColor: Colors.white70,
   ),
-  cardTheme: CardTheme(
+  // --- Perbaikan di sini ---
+  cardTheme: CardThemeData(
+    // Ganti CardTheme menjadi CardThemeData
     color: Colors.grey[850],
     elevation: 2,
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
