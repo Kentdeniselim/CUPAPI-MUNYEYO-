@@ -1,8 +1,7 @@
-// lib/josh/screen/personalize_settings.dart
 import 'package:flutter/material.dart';
+import 'package:praktek2/josh/screen/Isi%20Drawer/edit_profile_page.dart';
 import 'package:provider/provider.dart';
 import 'package:praktek2/josh/Provider/Theme.dart';
-import 'package:praktek2/josh/screen/Isi%20Drawer/edit_profile_page.dart'; // Import halaman baru
 
 class PersonalizeSettings extends StatelessWidget {
   const PersonalizeSettings({super.key});
@@ -22,7 +21,7 @@ class PersonalizeSettings extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Account Settings', // Tambahkan kategori baru
+                  'Account Settings',
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
@@ -39,8 +38,7 @@ class PersonalizeSettings extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) =>
-                                const EditProfilePage()), // Navigasi ke halaman edit profil
+                            builder: (context) => const EditProfilePage()),
                       );
                     },
                   ),
