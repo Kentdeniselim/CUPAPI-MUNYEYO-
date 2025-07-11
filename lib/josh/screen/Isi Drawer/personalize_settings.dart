@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:praktek2/josh/screen/Isi%20Drawer/edit_nickname_page.dart';
 import 'package:praktek2/josh/screen/Isi%20Drawer/edit_profile_page.dart';
 import 'package:provider/provider.dart';
 import 'package:praktek2/josh/Provider/Theme.dart';
@@ -39,6 +40,21 @@ class PersonalizeSettings extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                             builder: (context) => const EditProfilePage()),
+                      );
+                    },
+                  ),
+                ),
+                Card(
+                  margin: const EdgeInsets.symmetric(vertical: 10),
+                  child: ListTile(
+                    leading: const Icon(Icons.badge),
+                    title: const Text('Change Nickname'),
+                    trailing: const Icon(Icons.arrow_forward_ios),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const ChangeNicknamePage()),
                       );
                     },
                   ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:praktek2/josh/Provider/Theme.dart';
 import 'package:praktek2/josh/Provider/time_provider.dart';
 import 'package:praktek2/josh/Provider/navpro.dart';
+import 'package:praktek2/josh/Provider/user_provider.dart'; // Import provider pengguna
 import 'package:praktek2/josh/screen/Isi%20Drawer/About_Us.dart';
 import 'package:praktek2/josh/screen/Home.dart';
 import 'package:praktek2/josh/screen/bookmarkpage.dart';
@@ -35,6 +36,8 @@ class MainNavigationpro extends StatelessWidget {
     final themeProvider = Provider.of<ThemePro>(context);
     final bookmarkProvider = Provider.of<BookmarkProvider>(context);
     final timeProvider = Provider.of<TimeProvider>(context);
+    final userProvider =
+        Provider.of<UserProvider>(context); // Panggil UserProvider
 
     return Scaffold(
       drawer: Drawer(
@@ -53,8 +56,8 @@ class MainNavigationpro extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 10),
-                  const Text(
-                    'Cupapi Munyenyo',
+                  Text(
+                    userProvider.nickname, // Gunakan nickname dari provider
                     style: TextStyle(color: Colors.white, fontSize: 18),
                   ),
                   const Text(
