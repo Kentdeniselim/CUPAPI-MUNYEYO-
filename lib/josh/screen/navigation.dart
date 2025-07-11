@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:praktek2/josh/Provider/Theme.dart';
 import 'package:praktek2/josh/Provider/time_provider.dart';
 import 'package:praktek2/josh/Provider/navpro.dart';
-import 'package:praktek2/josh/Provider/user_provider.dart'; // Import provider pengguna
+import 'package:praktek2/josh/Provider/user_provider.dart';
 import 'package:praktek2/josh/screen/Isi%20Drawer/About_Us.dart';
 import 'package:praktek2/josh/screen/Home.dart';
 import 'package:praktek2/josh/screen/bookmarkpage.dart';
@@ -36,8 +36,7 @@ class MainNavigationpro extends StatelessWidget {
     final themeProvider = Provider.of<ThemePro>(context);
     final bookmarkProvider = Provider.of<BookmarkProvider>(context);
     final timeProvider = Provider.of<TimeProvider>(context);
-    final userProvider =
-        Provider.of<UserProvider>(context); // Panggil UserProvider
+    final userProvider = Provider.of<UserProvider>(context);
 
     return Scaffold(
       drawer: Drawer(
@@ -51,13 +50,18 @@ class MainNavigationpro extends StatelessWidget {
                 children: [
                   CircleAvatar(
                     radius: 30,
-                    backgroundImage: NetworkImage(
-                      'https://images.unsplash.com/photo-1601758123927-1960c337cd29?auto=format&fit=crop&w=80&q=80',
-                    ),
+                    // Logika untuk menampilkan gambar profil
+                    backgroundImage: userProvider.profileImage != null
+                        ? MemoryImage(userProvider.profileImage!)
+                        : null,
+                    child: userProvider.profileImage == null
+                        ? const Icon(Icons.person,
+                            size: 30, color: Colors.white)
+                        : null,
                   ),
                   const SizedBox(height: 10),
                   Text(
-                    userProvider.nickname, // Gunakan nickname dari provider
+                    userProvider.nickname,
                     style: TextStyle(color: Colors.white, fontSize: 18),
                   ),
                   const Text(

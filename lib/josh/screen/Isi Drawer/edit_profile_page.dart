@@ -1,8 +1,10 @@
-// lib/josh/screen/Isi Drawer/edit_profile_page.dart
+import 'dart:typed_data';
 import 'dart:ui';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:provider/provider.dart';
+import 'package:praktek2/josh/Provider/user_provider.dart'; // Import UserProvider
 
 class EditProfilePage extends StatefulWidget {
   const EditProfilePage({Key? key}) : super(key: key);
@@ -13,12 +15,22 @@ class EditProfilePage extends StatefulWidget {
 
 class _EditProfilePageState extends State<EditProfilePage> {
   Uint8List? _imageBytes;
-  XFile? _imageXFile;
   double _blurValue = 0.0;
-  // State untuk warna border RGB
   double _redValue = 0.0;
   double _greenValue = 0.0;
   double _blueValue = 0.0;
+
+  @override
+  void initState() {
+    super.initState();
+    // Ambil gambar profil yang sudah ada dari provider saat halaman dibuka
+    final userProvider = Provider.of<UserProvider>(context, listen: false);
+    if (userProvider.profileImage != null) {
+      setState(() {
+        _imageBytes = userProvider.profileImage;
+      });
+    }
+  }
 
   Future<void> _pickImage() async {
     final pickedFile =
@@ -27,7 +39,6 @@ class _EditProfilePageState extends State<EditProfilePage> {
     if (pickedFile != null) {
       final imageBytes = await pickedFile.readAsBytes();
       setState(() {
-        _imageXFile = pickedFile;
         _imageBytes = imageBytes;
         _blurValue = 0.0;
       });
@@ -52,7 +63,6 @@ class _EditProfilePageState extends State<EditProfilePage> {
           children: [
             Stack(
               children: [
-                // Lingkaran profil dengan blur
                 ImageFiltered(
                   imageFilter:
                       ImageFilter.blur(sigmaX: _blurValue, sigmaY: _blurValue),
@@ -74,7 +84,6 @@ class _EditProfilePageState extends State<EditProfilePage> {
                     ),
                   ),
                 ),
-                // Outline border di atas lingkaran profil
                 Positioned.fill(
                   child: GestureDetector(
                     onTap: _pickImage,
@@ -87,7 +96,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                               _redValue.toInt(),
                               _greenValue.toInt(),
                               _blueValue.toInt(),
-                              1.0), // Warna border dinamis
+                              1.0),
                         ),
                       ),
                     ),
@@ -199,6 +208,10 @@ class _EditProfilePageState extends State<EditProfilePage> {
             ElevatedButton(
               onPressed: () {
                 // Logika untuk menyimpan profil
+                if (_imageBytes != null) {
+                  Provider.of<UserProvider>(context, listen: false)
+                      .changeProfilePicture(_imageBytes!);
+                }
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(content: Text('Profil berhasil diperbarui!')),
                 );
